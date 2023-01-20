@@ -5,12 +5,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/styles.css">
     <title>Weather Dashboard</title>
 </head>
 
 <body>
+    <header>
+        <div class="head-title">
+            <h2>WEATHER DASHBOARD</h2>
 
+        </div>
+    </header>
+    <main>
+        <div class="enter-city">
+            <div class="city-data">
+                <h3>ENTER A CITY</h3>
+                <input type="text">
+                <button>SEARCH</button>
+            </div>
+        </div>
+        <div class="date-stats">
+            <div class="weather-stats">
+                <p class="city">New Jersey</p>
+                <p class="current-date">Today is: <span id="current-date">Jan 666</span></p>
+                <p class="temperature">Temperature: <span id="temp"></span>420</p>
+                <p>Wind: <span id="wind">A lot?</span></p>
+                <p>Humdity: <span id="humidity">Some</span></p>
+            </div>
+            <div class="forecast">
+                <h3>5 Day Forecast</h3>
+            </div>
+            <div class="five-day-container">
+                <ul class="five-day-forecast">
+
+                </ul>
+            </div>
+
+        </div>
+
+
+    </main>
 
 
 

@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* HEADER */
+.head-title{
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    background-image: url(./images/Screenshot\ 2023-01-19\ at\ 8.12.48\ PM.png);
+    background-size: cover;
+    border-bottom: 1px solid rgb(255, 249, 237);
+    font-family: 'Caveat', cursive;
+    color: aliceblue;
+    text-shadow: 5px 5px 5px black, 5px 5px 5px rgb(162, 255, 252);
+}
+
+/* MAIN BODY */
+main{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hands-holding-sun-ray-and-moon-crescent-minimal-wall-art-lineartstudio.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+.enter-city {
+    display: flex;
+    width: 40vw;
+    border: 2px solid red;
+    justify-content: center;
+}
+.date-stats {
+    width: 60vw;
+    border: 2px solid green;
+}
+
+.city-data {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid yellow;
+    width: 30vw;
+}
+
+.weather-stats{
+    display: flex;
+    flex-direction: column;
+    width: 58vw;
+    border: 2px solid purple;
+}
+
+.forecast {
+    border: 2px solid blue;
+}
+
+.five-day-container {
+    height: 100vh;
+    width: 58vw;
+    border: 2px solid pink;
+}
