@@ -3,6 +3,10 @@
     padding: 0;
 
 }
+html{
+    background-image: url(./images/Screenshot\ 2023-01-19\ at\ 8.12.48\ PM.png);
+    background-size: cover;
+}
 
 /* HEADER */
 .head-title{
