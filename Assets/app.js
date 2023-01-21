@@ -3,18 +3,35 @@ const currentDateEl = document.querySelector("#current-date")
 const apiKey = "f6db8585ff8265ffbd2cbb997c9856a7";
 let fiveDayContainer = document.querySelector(".five-day-container")
 let forecastEl = document.querySelector(".forecast")
+let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
 forecastEl.style.display = "none"
 fiveDayContainer.style.display = "none";
-
 currentDateEl.innerHTML = currentDate
 
 function getWeather() {
+    let city = document.querySelector("#city-input").value
+    searchHistory.unshift(city)
+    if (searchHistory.length > 10) {
+        searchHistory.pop()
+    }
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    let buttonContainer = document.querySelector(".history-buttons");
+    buttonContainer.innerHTML = "";
+    for (let i = 0; i < searchHistory.length; i++) {
+        let button = document.createElement("button");
+        button.innerHTML = searchHistory[i];
+        button.classList.add("search-history");
+        buttonContainer.appendChild(button)
+        button.onclick = function () {
+            currentWeather(searchHistory[i]);
+        };
+    }
+
     fiveDayWeather()
     currentWeather()
 
 }
-
 
 function currentWeather() {
     let city = document.querySelector("#city-input").value;
@@ -23,11 +40,8 @@ function currentWeather() {
     let wind = document.querySelector("#wind")
     let humidity = document.querySelector("#humidity")
     let weatherIcon = document.querySelector(".weather-icon")
-
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
-
-    // Make the fetch request
     fetch(apiUrl)
         .then(function (response) {
             return response.json();
@@ -66,7 +80,6 @@ function fiveDayWeather() {
     let iconFour = document.querySelector(".icon-four")
     let iconFive = document.querySelector(".icon-five")
 
-
     let dateOne = document.querySelector(".date-one")
     let dateTwo = document.querySelector(".date-two")
     let dateThree = document.querySelector(".date-three")
@@ -91,7 +104,6 @@ function fiveDayWeather() {
     let humidFour = document.querySelector(".humid-four")
     let humidFive = document.querySelector(".humid-five")
 
-
     fetch(apiUrl)
         .then(function (response) {
             return response.json();
@@ -108,8 +120,7 @@ function fiveDayWeather() {
             let iconCodeFour = data.list[32].weather[0].icon;
             let iconUrlFour = `http://openweathermap.org/img/wn/${iconCodeFour}@2x.png`;
             let iconCodeFive = data.list[39].weather[0].icon;
-            let iconUrlFive = `http://openweathermap.org/img/wn/${iconCodeFour}@2x.png`;
-
+            let iconUrlFive = `http://openweathermap.org/img/wn/${iconCodeFive}@2x.png`;
 
             iconOne.innerHTML = `<img src="${iconUrlOne}">` + `<img src="${iconUrlOne}">` + `<img src="${iconUrlOne}">`
             iconTwo.innerHTML = `<img src="${iconUrlTwo}">` + `<img src="${iconUrlTwo}">` + `<img src="${iconUrlTwo}">`
@@ -117,18 +128,17 @@ function fiveDayWeather() {
             iconFour.innerHTML = `<img src="${iconUrlFour}">` + `<img src="${iconUrlFour}">` + `<img src="${iconUrlFour}">`
             iconFive.innerHTML = `<img src="${iconUrlFive}">` + `<img src="${iconUrlFive}">` + `<img src="${iconUrlFive}">`
 
-
             dateOne.innerHTML = moment(data.list[8].dt_txt).format("MM-DD-YYYY")
             dateTwo.innerHTML = moment(data.list[16].dt_txt).format("MM-DD-YYYY")
             dateThree.innerHTML = moment(data.list[24].dt_txt).format("MM-DD-YYYY")
             dateFour.innerHTML = moment(data.list[32].dt_txt).format("MM-DD-YYYY")
             dateFive.innerHTML = moment(data.list[39].dt_txt).format("MM-DD-YYYY")
 
-            tempOne.innerHTML = "Temp: " + data.list[8].main.temp
-            tempTwo.innerHTML = "Temp: " + data.list[16].main.temp
-            tempThree.innerHTML = "Temp: " + data.list[24].main.temp
-            tempFour.innerHTML = "Temp: " + data.list[32].main.temp
-            tempFive.innerHTML = "Temp: " + data.list[39].main.temp
+            tempOne.innerHTML = "Temp: " + data.list[8].main.temp + " °F"
+            tempTwo.innerHTML = "Temp: " + data.list[16].main.temp + " °F"
+            tempThree.innerHTML = "Temp: " + data.list[24].main.temp + " °F"
+            tempFour.innerHTML = "Temp: " + data.list[32].main.temp + " °F"
+            tempFive.innerHTML = "Temp: " + data.list[39].main.temp + " °F"
 
             windOne.innerHTML = "Wind: " + data.list[8].wind.speed + " mph"
             windTwo.innerHTML = "Wind: " + data.list[16].wind.speed + " mph"

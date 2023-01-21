@@ -73,6 +73,20 @@ font-family: 'Caveat', cursive;
     cursor: pointer;
     font-size: 1.2rem;
     height: 35px;
+    width: 30vw;
+    margin-bottom: 4%;
+}
+
+.search-history{
+    background-color: rgba(53, 67, 95, 0.9);
+    border: 1px solid rgba(151, 151, 151, 0.677);
+    box-shadow: 5px 5px 10px black;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 35px;
+    width: 30vw;
+    margin-bottom: 2%;
 }
 
 .search:hover {
@@ -82,6 +96,12 @@ font-family: 'Caveat', cursive;
 .search:active{
     background-color: rgba(20, 20, 44, 0.853);
     box-shadow: 0 0 10px white;
+}
+
+.history-buttons {
+    width: 30vw;
+    height: 35px;
+    /* border: 2px solid green; */
 }
 
 img {
