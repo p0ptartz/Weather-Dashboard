@@ -10,93 +10,133 @@ html{
 
 /* HEADER */
 .head-title{
-    width: 100vw;
-    height: 15vh;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 2.8rem;
     background-image: url(./images/Screenshot\ 2023-01-19\ at\ 8.12.48\ PM.png);
     background-size: cover;
-    border-bottom: 1px solid rgb(255, 249, 237);
-    font-family: 'Caveat', cursive;
     color: aliceblue;
-    text-shadow: 5px 5px 5px black, 5px 5px 5px rgb(162, 255, 252);
+    display: flex;
+    font-family: 'Caveat', cursive;
+    font-size: 2.8rem;
+    height: 15vh;
+    justify-content: center;
+    text-shadow: 3px 3px 3px black, 5px 5px 5px rgb(162, 255, 252);
+    width: 100vw;
 }
 
 /* MAIN BODY */
 main{
-    width: 100vw;
-    height: 100vh;
     /* background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hands-holding-sun-ray-and-moon-crescent-minimal-wall-art-lineartstudio.jpg);
     background-size: cover; */
     display: flex;
+    height: 100vh;
+    width: 100vw;
 }
 
 .enter-city {
+    /* border: 2px solid red; */
     display: flex;
-    width: 40vw;
-    border: 2px solid red;
     justify-content: center;
+    width: 40vw;
 }
 .date-stats {
     width: 60vw;
-    border: 2px solid green;
 }
 
 .city-data {
+    /* border: 2px solid yellow; */
     display: flex;
     flex-direction: column;
-    border: 2px solid yellow;
     width: 30vw;
 }
 
 .weather-stats{
+    background-color: rgba(53, 67, 95, 0.9);
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 15px;
+    border-radius: 15px;
+    color: white;
     display: flex;
     flex-direction: column;
-    width: 58vw;
-    border: 2px solid purple;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    margin-left: 1.5%;
+    text-shadow: 3px 3px 3px black;
+    width: 56vw;
 }
 
+.weather-stats p{
+    padding: 1% 0 .3% 1.5%;
+}
+
+/* .city,
+.temperature,
+.humidity{
+
+} */
+
+.current-date {
+    background-color: rgba(12, 12, 27, 0.853);
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 15px 15px 0 0;
+    color:white;
+  padding-bottom: 10px;
+}
+
+
+
 .forecast {
-    border: 2px solid blue;
-    display: flex;
-    justify-content: center;
-    font-size: 2.6rem;
-    font-family: 'Caveat', cursive;
     color: aliceblue;
+    
+    display: flex;
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    justify-content: center;
     text-shadow: 5px 5px 5px black, 5px 5px 5px rgb(162, 255, 252);
 }
 
-.five-day-container {
-    height: 100vh;
-    width: 58vw;
-    border: 2px solid pink;
-}
 
 /* 5 DAY FORECAST */
 
 .five-day-container{
+    align-content: flex-start;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 100vh;
     justify-content: space-evenly;
-    align-content: flex-start;
-}
-
-.card {
-    border: 2px solid red;
-    width: 16vw;
-    height: 22vh;
-    margin: 4% 0;
-    font-size: 1.3rem;
-    padding: 9px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 58vw;
     
 }
 
+.card {
+    background-color: rgba(53, 67, 95, 0.9);
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    margin: 4% 0;
+    min-height: 22vh;
+    text-shadow: 5px 5px 5px black;
+    
+    width: 18vw;
+    
+}
+
+.date-p {
+    background-color: rgba(12, 12, 27, 0.853);
+    border-bottom: 1px solid rgb(156, 156, 156);
+    border-radius: 15px 15px 0 0;
+    color: white;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+
+.temp-p,
+.wind-p,
+.humid-p{
+    margin: 5px 0 2px 8px;
+}
+             
 
 

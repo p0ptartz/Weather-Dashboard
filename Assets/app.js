@@ -1,13 +1,18 @@
 let currentDate = moment().format("MMMM DD, YYYY")
 const currentDateEl = document.querySelector("#current-date")
 const apiKey = "f6db8585ff8265ffbd2cbb997c9856a7";
+let fiveDayContainer = document.querySelector(".five-day-container")
+let forecastEl = document.querySelector(".forecast")
 
+forecastEl.style.display = "none"
+fiveDayContainer.style.display = "none";
 
 currentDateEl.innerHTML = currentDate
 
 function getWeather() {
-    // currentWeather()
     fiveDayWeather()
+    currentWeather()
+
 }
 
 
@@ -36,6 +41,10 @@ function currentWeather() {
 }
 
 function fiveDayWeather() {
+    fiveDayContainer.removeAttribute("style")
+    forecastEl.removeAttribute("style")
+
+
     let city = document.querySelector("#city-input").value;
     let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
     // let date = document.querySelector(".date-p")
