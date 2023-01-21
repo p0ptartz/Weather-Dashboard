@@ -87,10 +87,15 @@ main{
 
 .card {
     border: 2px solid red;
-    width: 15vw;
-    height: 28vh;
+    width: 16vw;
+    height: 22vh;
     margin: 4% 0;
     font-size: 1.3rem;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 
