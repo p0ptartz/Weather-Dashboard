@@ -6,6 +6,7 @@
 html{
     background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hands-holding-sun-ray-and-moon-crescent-minimal-wall-art-lineartstudio.jpg);
     background-size: cover;
+    
 }
 
 /* HEADER */
@@ -16,7 +17,7 @@ html{
     color: aliceblue;
     display: flex;
     font-family: 'Caveat', cursive;
-    font-size: 2.8rem;
+    font-size: 3rem;
     height: 15vh;
     justify-content: center;
     text-shadow: 3px 3px 3px black, 5px 5px 5px rgb(162, 255, 252);
@@ -25,8 +26,6 @@ html{
 
 /* MAIN BODY */
 main{
-    /* background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hands-holding-sun-ray-and-moon-crescent-minimal-wall-art-lineartstudio.jpg);
-    background-size: cover; */
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -49,11 +48,46 @@ main{
     width: 30vw;
 }
 
+.city-data h2 {
+color: aliceblue;
+font-size: 2rem;
+margin-bottom: 2%;
+text-align: center;
+text-shadow: 3px 3px 3px black, 3px 3px 10px rgb(162, 255, 252);
+}
+
+#city-input{
+    font-size: 1rem;
+    height: 30px;
+    margin-bottom: 1.5%;
+}
+
+.search {
+    background-color: rgba(12, 12, 27, 0.853);
+    border: 1px solid rgba(151, 151, 151, 0.677);
+    box-shadow: 5px 5px 10px black;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 35px;
+}
+
+.search:hover {
+    background-color: rgba(53, 67, 95, 0.9);
+}
+
+.search:active{
+    background-color: rgba(20, 20, 44, 0.853);
+    box-shadow: 0 0 10px white;
+}
+
+
 .weather-stats{
     background-color: rgba(53, 67, 95, 0.9);
     border: 1px solid rgb(156, 156, 156);
     border-radius: 15px;
     border-radius: 15px;
+    box-shadow: 10px 10px 10px black;
     color: white;
     display: flex;
     flex-direction: column;
@@ -67,11 +101,6 @@ main{
     padding: 1% 0 .3% 1.5%;
 }
 
-/* .city,
-.temperature,
-.humidity{
-
-} */
 
 .current-date {
     background-color: rgba(12, 12, 27, 0.853);
@@ -88,7 +117,7 @@ main{
     
     display: flex;
     font-family: 'Caveat', cursive;
-    font-size: 3.5rem;
+    font-size: 5rem;
     justify-content: center;
     text-shadow: 5px 5px 5px black, 5px 5px 5px rgb(162, 255, 252);
 }
@@ -101,7 +130,7 @@ main{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 70vh;
     justify-content: space-evenly;
     width: 58vw;
     
@@ -111,14 +140,14 @@ main{
     background-color: rgba(53, 67, 95, 0.9);
     border: 1px solid rgb(156, 156, 156);
     border-radius: 15px;
+    box-shadow: 10px 10px 10px black;
     color: white;
     display: flex;
     flex-direction: column;
     font-size: 1.4rem;
-    margin: 4% 0;
+    margin: 2% 0;
     min-height: 22vh;
     text-shadow: 5px 5px 5px black;
-    
     width: 18vw;
     
 }
