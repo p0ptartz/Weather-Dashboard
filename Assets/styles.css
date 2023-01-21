@@ -6,7 +6,7 @@
 html{
     background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hands-holding-sun-ray-and-moon-crescent-minimal-wall-art-lineartstudio.jpg);
     background-size: cover;
-    
+font-family: 'Nunito Sans', sans-serif;
 }
 
 /* HEADER */
@@ -29,6 +29,7 @@ main{
     display: flex;
     height: 100vh;
     width: 100vw;
+    margin-top: 2%;
 }
 
 .enter-city {
@@ -50,16 +51,18 @@ main{
 
 .city-data h2 {
 color: aliceblue;
-font-size: 2rem;
+font-size: 2.8rem;
 margin-bottom: 2%;
 text-align: center;
 text-shadow: 3px 3px 3px black, 3px 3px 10px rgb(162, 255, 252);
+font-family: 'Caveat', cursive;
+
 }
 
 #city-input{
     font-size: 1rem;
     height: 30px;
-    margin-bottom: 1.5%;
+    margin-bottom: 1.7%;
 }
 
 .search {
