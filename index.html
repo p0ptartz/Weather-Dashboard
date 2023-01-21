@@ -22,18 +22,17 @@
     <main>
         <div class="enter-city">
             <div class="city-data">
-                <h3>ENTER A CITY</h3>
-                <input type="text">
-                <button class="search">SEARCH</button>
+                <input type="text" id="city-input" placeholder="ENTER A CITY">
+                <button class="search" onclick="getWeather()">SEARCH</button>
             </div>
         </div>
         <div class="date-stats">
             <div class="weather-stats">
-                <p class="city">New Jersey</p>
                 <p class="current-date">Today is: <span id="current-date">Jan 666</span></p>
-                <p class="temperature">Temperature: <span id="temp"></span>420</p>
-                <p>Wind: <span id="wind">A lot?</span></p>
-                <p>Humdity: <span id="humidity">Some</span></p>
+                <p>City: <span class="city"></span></p>
+                <p class="temperature">Temperature: <span id="temp"></span></p>
+                <p>Wind: <span id="wind"></span></p>
+                <p>Humdity: <span id="humidity"></span></p>
             </div>
             <div class="forecast">
                 <h3>5 Day Forecast</h3>
