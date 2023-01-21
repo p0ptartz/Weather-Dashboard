@@ -22,7 +22,10 @@ function currentWeather() {
     let currentTemp = document.querySelector("#temp")
     let wind = document.querySelector("#wind")
     let humidity = document.querySelector("#humidity")
+    let weatherIcon = document.querySelector(".weather-icon")
+
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+
 
     // Make the fetch request
     fetch(apiUrl)
@@ -31,10 +34,14 @@ function currentWeather() {
         })
         .then(function (data) {
             console.log(data)
+            let iconCode = data.weather[0].icon;
+            let iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
             currentCity.innerHTML = data.name
             currentTemp.innerHTML = data.main.temp + " °F"
             wind.innerHTML = data.wind.speed + " MPH"
             humidity.innerHTML = data.main.humidity + "%"
+            weatherIcon.innerHTML = `<img src="${iconUrl}">` + `<img src="${iconUrl}">` + `<img src="${iconUrl}">`
 
         })
         .catch(error => console.error(error));
@@ -47,10 +54,18 @@ function fiveDayWeather() {
 
     let city = document.querySelector("#city-input").value;
     let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
+    // let icon = document.querySelector(".icon-div")
     // let date = document.querySelector(".date-p")
     // let temp = document.querySelector(".temp-p")
     // let wind = document.querySelector(".wind-p")
     // let humid = document.querySelector(".humid-p")
+
+    let iconOne = document.querySelector(".icon-one")
+    let iconTwo = document.querySelector(".icon-two")
+    let iconThree = document.querySelector(".icon-three")
+    let iconFour = document.querySelector(".icon-four")
+    let iconFive = document.querySelector(".icon-five")
+
 
     let dateOne = document.querySelector(".date-one")
     let dateTwo = document.querySelector(".date-two")
@@ -83,6 +98,25 @@ function fiveDayWeather() {
         })
         .then(function (data) {
             console.log(data)
+
+            let iconCodeOne = data.list[8].weather[0].icon;
+            let iconUrlOne = `http://openweathermap.org/img/wn/${iconCodeOne}@2x.png`;
+            let iconCodeTwo = data.list[16].weather[0].icon;
+            let iconUrlTwo = `http://openweathermap.org/img/wn/${iconCodeTwo}@2x.png`;
+            let iconCodeThree = data.list[24].weather[0].icon;
+            let iconUrlThree = `http://openweathermap.org/img/wn/${iconCodeThree}@2x.png`;
+            let iconCodeFour = data.list[32].weather[0].icon;
+            let iconUrlFour = `http://openweathermap.org/img/wn/${iconCodeFour}@2x.png`;
+            let iconCodeFive = data.list[39].weather[0].icon;
+            let iconUrlFive = `http://openweathermap.org/img/wn/${iconCodeFour}@2x.png`;
+
+
+            iconOne.innerHTML = `<img src="${iconUrlOne}">` + `<img src="${iconUrlOne}">` + `<img src="${iconUrlOne}">`
+            iconTwo.innerHTML = `<img src="${iconUrlTwo}">` + `<img src="${iconUrlTwo}">` + `<img src="${iconUrlTwo}">`
+            iconThree.innerHTML = `<img src="${iconUrlThree}">` + `<img src="${iconUrlThree}">` + `<img src="${iconUrlThree}">`
+            iconFour.innerHTML = `<img src="${iconUrlFour}">` + `<img src="${iconUrlFour}">` + `<img src="${iconUrlFour}">`
+            iconFive.innerHTML = `<img src="${iconUrlFive}">` + `<img src="${iconUrlFive}">` + `<img src="${iconUrlFive}">`
+
 
             dateOne.innerHTML = moment(data.list[8].dt_txt).format("MM-DD-YYYY")
             dateTwo.innerHTML = moment(data.list[16].dt_txt).format("MM-DD-YYYY")
