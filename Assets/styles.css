@@ -56,10 +56,17 @@ main{
     flex-direction: column;
     width: 58vw;
     border: 2px solid purple;
+    font-size: 1.3rem;
 }
 
 .forecast {
     border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    font-size: 2.6rem;
+    font-family: 'Caveat', cursive;
+    color: aliceblue;
+    text-shadow: 5px 5px 5px black, 5px 5px 5px rgb(162, 255, 252);
 }
 
 .five-day-container {
@@ -67,3 +74,24 @@ main{
     width: 58vw;
     border: 2px solid pink;
 }
+
+/* 5 DAY FORECAST */
+
+.five-day-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+}
+
+.card {
+    border: 2px solid red;
+    width: 15vw;
+    height: 28vh;
+    margin: 4% 0;
+    font-size: 1.3rem;
+}
+
+
+
