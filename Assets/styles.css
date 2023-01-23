@@ -74,7 +74,25 @@ font-family: 'Caveat', cursive;
     font-size: 1.2rem;
     height: 35px;
     width: 30vw;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
+}
+
+.btn-clear{
+    display: flex;
+    justify-content: center;
+}
+
+.clear-search {
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgba(151, 151, 151, 0.677);
+    box-shadow: 5px 5px 10px black;
+    color: rgb(12, 12, 27,);
+    cursor: pointer;
+    height: 35px;
+    width: 10vw;
+    margin-bottom: 2%;
+    height: 20px;
+    text-align: center;
 }
 
 .search-history{

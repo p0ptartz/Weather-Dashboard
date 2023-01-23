@@ -5,9 +5,11 @@ let fiveDayContainer = document.querySelector(".five-day-container")
 let forecastEl = document.querySelector(".forecast")
 let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 let currentCityInput;
+
 forecastEl.style.display = "none"
 fiveDayContainer.style.display = "none";
 currentDateEl.innerHTML = currentDate
+
 
 function getWeather() {
 
@@ -21,7 +23,7 @@ function getWeather() {
         searchHistory.pop()
     }
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-    let buttonContainer = document.querySelector(".history-buttons");
+    let buttonContainer = document.querySelector(".history-buttons")
     buttonContainer.innerHTML = "";
     for (let i = 0; i < searchHistory.length; i++) {
         let button = document.createElement("button");
@@ -34,7 +36,10 @@ function getWeather() {
         };
 
     }
+
+
 }
+
 
 function currentWeather(city) {
     // let city = document.querySelector("#city-input").value;
@@ -158,5 +163,11 @@ function fiveDayWeather(city) {
         })
 }
 
+function clearSearch() {
+    localStorage.removeItem("searchHistory")
+    searchHistory = []
+    let searchButtons = document.querySelectorAll(".search-history")
+    searchButtons.forEach(btn => btn.remove())
+}
 
 
