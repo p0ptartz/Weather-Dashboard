@@ -4,14 +4,19 @@ const apiKey = "f6db8585ff8265ffbd2cbb997c9856a7";
 let fiveDayContainer = document.querySelector(".five-day-container")
 let forecastEl = document.querySelector(".forecast")
 let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
-
+let currentCityInput;
 forecastEl.style.display = "none"
 fiveDayContainer.style.display = "none";
 currentDateEl.innerHTML = currentDate
 
 function getWeather() {
-    let city = document.querySelector("#city-input").value
-    searchHistory.unshift(city)
+
+    currentCityInput = document.querySelector("#city-input").value
+    fiveDayWeather(currentCityInput)
+    currentWeather(currentCityInput)
+
+
+    searchHistory.unshift(currentCityInput)
     if (searchHistory.length > 10) {
         searchHistory.pop()
     }
@@ -24,17 +29,16 @@ function getWeather() {
         button.classList.add("search-history");
         buttonContainer.appendChild(button)
         button.onclick = function () {
-            currentWeather(searchHistory[i]);
+            currentWeather(this.innerHTML)
+            fiveDayWeather(this.innerHTML)
         };
+
     }
-
-    fiveDayWeather()
-    currentWeather()
-
 }
 
-function currentWeather() {
-    let city = document.querySelector("#city-input").value;
+function currentWeather(city) {
+    // let city = document.querySelector("#city-input").value;
+
     let currentCity = document.querySelector(".city")
     let currentTemp = document.querySelector("#temp")
     let wind = document.querySelector("#wind")
@@ -61,12 +65,12 @@ function currentWeather() {
         .catch(error => console.error(error));
 }
 
-function fiveDayWeather() {
+function fiveDayWeather(city) {
     fiveDayContainer.removeAttribute("style")
     forecastEl.removeAttribute("style")
 
 
-    let city = document.querySelector("#city-input").value;
+    // let city = document.querySelector("#city-input").value;
     let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
     // let icon = document.querySelector(".icon-div")
     // let date = document.querySelector(".date-p")
