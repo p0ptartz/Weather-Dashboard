@@ -95,6 +95,16 @@ font-family: 'Caveat', cursive;
     text-align: center;
 }
 
+.clear-search:hover {
+    background-color: rgb(198, 198, 198);
+}
+
+.clear-search:active {
+    background-color: rgb(228, 228, 228);
+    box-shadow: 0 0 5px white;
+    border: 1px solid rgba(12, 12, 27, 0.853);;
+}
+
 .search-history{
     background-color: rgba(53, 67, 95, 0.9);
     border: 1px solid rgba(151, 151, 151, 0.677);
@@ -105,6 +115,14 @@ font-family: 'Caveat', cursive;
     height: 35px;
     width: 30vw;
     margin-bottom: 2%;
+}
+.search-history:hover{
+    background-color: rgba(12, 12, 27, 0.853);
+}
+
+.search-history:active{
+    background-color: rgba(32, 32, 71, 0.853);
+    box-shadow: 0 0 7px white;
 }
 
 .search:hover {
