@@ -14,30 +14,31 @@ currentDateEl.innerHTML = currentDate
 function getWeather() {
 
     currentCityInput = document.querySelector("#city-input").value
-    fiveDayWeather(currentCityInput)
-    currentWeather(currentCityInput)
 
+    if (currentCityInput !== undefined && currentCityInput !== null && currentCityInput !== "") {
+        currentWeather(currentCityInput)
+        fiveDayWeather(currentCityInput)
 
-    searchHistory.unshift(currentCityInput)
-    if (searchHistory.length > 10) {
-        searchHistory.pop()
+        searchHistory.unshift(currentCityInput)
+        if (searchHistory.length > 10) {
+            searchHistory.pop()
+        }
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+        let buttonContainer = document.querySelector(".history-buttons")
+        buttonContainer.innerHTML = "";
+        for (let i = 0; i < searchHistory.length; i++) {
+            let button = document.createElement("button");
+            button.innerHTML = searchHistory[i];
+            button.classList.add("search-history");
+            buttonContainer.appendChild(button)
+            button.onclick = function () {
+                currentWeather(this.innerHTML)
+                fiveDayWeather(this.innerHTML)
+            };
+        }
+    } else {
+        alert("please enter a value")
     }
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-    let buttonContainer = document.querySelector(".history-buttons")
-    buttonContainer.innerHTML = "";
-    for (let i = 0; i < searchHistory.length; i++) {
-        let button = document.createElement("button");
-        button.innerHTML = searchHistory[i];
-        button.classList.add("search-history");
-        buttonContainer.appendChild(button)
-        button.onclick = function () {
-            currentWeather(this.innerHTML)
-            fiveDayWeather(this.innerHTML)
-        };
-
-    }
-
-
 }
 
 
@@ -53,10 +54,17 @@ function currentWeather(city) {
 
     fetch(apiUrl)
         .then(function (response) {
+            if (response.status === 404) {
+                alert("ENTER A VALID CITY")
+                return;
+            }
             return response.json();
         })
         .then(function (data) {
             console.log(data)
+            if (data.cod !== 200) {
+                alert("ENTER A VALID CITY")
+            }
             let iconCode = data.weather[0].icon;
             let iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
@@ -118,7 +126,7 @@ function fiveDayWeather(city) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
+            // console.log(data)
 
             let iconCodeOne = data.list[8].weather[0].icon;
             let iconUrlOne = `http://openweathermap.org/img/wn/${iconCodeOne}@2x.png`;
