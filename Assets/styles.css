@@ -228,6 +228,140 @@ img {
 .humid-p{
     margin: 5px 0 2px 8px;
 }
-             
+         
+
+@media only screen and (max-width:900px){
+    .city-data h2 {
+        font-size: 2rem;
+    }
+
+    h3{
+        font-size: 4.3rem;
+    }
+}
+
+@media only screen and (max-width:710px){
+.head-title{
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 3.4rem;
+}
+}
+
+@media only screen and (max-width:800px){
+html {
+    all: initial;
+    background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hands-holding-sun-ray-and-moon-crescent-minimal-wall-art-lineartstudio.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+font-family: 'Nunito Sans', sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+body{
+    overflow-x: hidden;
+    width: 90vw;
+}
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        height: 100vh;
+        width: 100vw;
+        margin-top: 2%;
+        overflow-x: hidden;
+    }
+
+    .head-title{
+        text-align: center;
+        height: 75px;
+        font-size: 2rem;
+        width: 85vw;
+    }
+    .enter-city{
+        display: flex;
+        width: 100vw;
+        height: 270px;
+    }
+    .city-data{
+        width: 100vw;
+       height: 250px;
+        display: flex;
+        /* align-items: center; */
+    }
+
+    .city-data h2{
+        width: 85vw;
+        font-size: 2.4rem;
+    }
+
+    .history-buttons{
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .search-history{
+        width: 16.4vw;
+        margin-right: 2%;
+        font-size: .9rem;
+    }
+
+    .search-clear{
+        width: 100vw;
+        display: flex;
+    }
+
+    
+.clear-search,
+.search{
+    width: 45vw;
+    height: 30px;
+}
+.search{
+    
+    margin-right: 2vw;
+}
+
+.weather-stats{
+    width: 87vw;
+    font-size: 1.3rem;
+}
+    .date-stats {
+        all: initial;
+        width: 90vw;
+    }
+
+.five-day-container {
+    
+    all: initial;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+h3 {
+    margin: 2% 0;
+}
+.card{
+    all: initial;
+    width: 42vw;
+    background-color: rgba(53, 67, 95, 0.9);
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px black;
+    color: white;
+    font-size: 1.2rem;
+    min-height: 22vh;
+    text-shadow: 5px 5px 5px black;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    min-height: 15vh;
+}
+}
+
 
 

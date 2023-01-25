@@ -106,7 +106,7 @@ function fiveDayWeather(city) {
                 <p class="temp-p">Temp: ${data.list[idx].main.temp} °F</p>
                 <p class="wind-p">Wind: ${data.list[idx].wind.speed}  mph</p>
                 <p class="humid-p">Hum: ${data.list[idx].main.humidity} %</p>
-                <div class="icon-div"><img src="${iconUrlOne}"><img src="${iconUrlOne}"><img src="${iconUrlOne}"></div>
+                <div class="icon-div"><img src="${iconUrlOne}"></div>
                 `
                 fiveDayContainer.append(forecastDiv)
 
