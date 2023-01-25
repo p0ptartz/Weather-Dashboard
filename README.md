@@ -9,13 +9,13 @@ A responsive weather dashboard created with HTML, CSS, and JavaScript that also 
 <details>
 <summary>Browser View</summary>
 
-![Browser View](Assets/images/weatherBrowser.png))))
+![Browser View](Assets/images/weatherBrowser.png)
 </details>
 
 <details>
 <summary>Tablet/Mobile View</summary>
 
-![Mobile View](Assets/images/weatherMobile.png))
+![Mobile View](Assets/images/weatherMobile.png)
 </details>
 
 #
