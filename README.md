@@ -9,7 +9,7 @@ A responsive weather dashboard created with HTML, CSS, and JavaScript that also 
 <details>
 <summary>Browser View</summary>
 
-![Browser View](Assets/images/weather.png)))
+![Browser View](Assets/images/weatherBrowser.png))))
 </details>
 
 <details>
