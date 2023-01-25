@@ -261,12 +261,11 @@ html {
     background-size: cover;
     background-position: 50% 50%;
 font-family: 'Nunito Sans', sans-serif;
-    overflow-x: hidden;
     display: flex;
     justify-content: center;
+   
 }
 body{
-    overflow-x: hidden;
     width: 90vw;
 }
     main{
@@ -276,14 +275,17 @@ body{
         height: 100vh;
         width: 100vw;
         margin-top: 2%;
-        overflow-x: hidden;
     }
 
     .head-title{
         text-align: center;
-        height: 75px;
+        height: 120px;
         font-size: 2rem;
         width: 85vw;
+    }
+
+    #city-input {
+        width: 91vw;
     }
     .enter-city{
         display: flex;
