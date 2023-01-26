@@ -97,6 +97,7 @@ font-family: 'Caveat', cursive;
     width: 14.5vw;
     margin-bottom: 2%;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .clear-search:hover {
@@ -244,16 +245,6 @@ img {
     }
 }
 
-@media only screen and (max-width:710px){
-.head-title{
-    font-size: 2.5rem;
-}
-
-h3 {
-    font-size: 3.4rem;
-}
-}
-
 @media only screen and (max-width:800px){
 html {
     all: initial;
@@ -314,6 +305,7 @@ body{
         width: 16.4vw;
         margin-right: 2%;
         font-size: .9rem;
+        height: 40px;
     }
 
     .search-clear{
@@ -326,10 +318,10 @@ body{
 .search{
     width: 45vw;
     height: 30px;
+    font-size: 1rem;
 }
 .search{
-    
-    margin-right: 2vw;
+    margin-right: 1.5vw;
 }
 
 .weather-stats{
