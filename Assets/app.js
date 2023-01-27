@@ -23,7 +23,6 @@ function getWeather() {
     }
 }
 
-
 // function that takes the user input and stores it in local storage to create search history buttons that can display previous searches
 function handleSearchHistory(currentCityInput) {
     // stores the most recent searches first
@@ -35,7 +34,7 @@ function handleSearchHistory(currentCityInput) {
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
     // targets element that will contain search history buttons
     let buttonContainer = document.querySelector(".history-buttons")
-    buttonContainer.innerHTML = ""; s
+    buttonContainer.innerHTML = "";
     // looping search history to create new btn for each search
     for (let i = 0; i < searchHistory.length; i++) {
         let button = document.createElement("button");
@@ -124,6 +123,7 @@ function fiveDayWeather(city) {
         })
 }
 
+// clears the local storage
 function clearSearch() {
     localStorage.removeItem("searchHistory")
     searchHistory = []
